@@ -37,6 +37,7 @@ namespace _380Prototype
 
         }
 
+        //TODO: match the schedule of classes, wed/wed, or all days etc.
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
             // Clear the listbox to display fresh information
@@ -45,9 +46,12 @@ namespace _380Prototype
             // Select the date and display it on the schedule label
             textBox1.Text = monthCalendar1.SelectionStart.DayOfWeek.ToString() + " " + monthCalendar1.SelectionStart.Date.ToShortDateString();
 
-            string[] listOfClasses = { "COMP 110", "COMP 222", "COMP 322", "COMP 482", "COMP333", "COMP310" };
+            string[] listOfClasses = { "COMP 110", "COMP 222", "COMP 322", "COMP 482", "COMP 333", "COMP 310" };
 
             Random r = new Random();
+
+            var nums = new List<int> { };  // holds each instance of randomNumberOfClasses
+
 
             // How many classes to show per day
             int randomNumberOfClasses = r.Next(1, 4);
@@ -56,11 +60,18 @@ namespace _380Prototype
             // TODO: remove duplicates
             for (int i = 0; i <= randomNumberOfClasses; i++)
             {
-                int randomClassPicker = r.Next(listOfClasses.Length);
-                listBox2.Items.Add(listOfClasses[randomClassPicker].ToString() + "\tFrom:\tTo:\tRoom:");
+                int randomClassPicker = r.Next(listOfClasses.Length);  // Generate number from 0 to number of classes
+
+                if (!nums.Contains(randomClassPicker))   // Get a unique class each, so no duplicates
+                {
+                    nums.Add(randomClassPicker);
+
+                    listBox2.Items.Add(listOfClasses[randomClassPicker].ToString() + "\tFrom:\tTo:\tRoom:");
+                }
             }
                 
         }
+
 
         private void button2_Click(object sender, EventArgs e)
         {
