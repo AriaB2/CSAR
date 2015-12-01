@@ -43,7 +43,7 @@ namespace _380Prototype
             listBox2.Items.Clear();
 
             // Select the date and display it on the schedule label
-            textBox1.Text = monthCalendar1.SelectionStart.Date.ToShortDateString();
+            textBox1.Text = monthCalendar1.SelectionStart.DayOfWeek.ToString() + " " + monthCalendar1.SelectionStart.Date.ToShortDateString();
 
             string[] listOfClasses = { "COMP 110", "COMP 222", "COMP 322", "COMP 482", "COMP333", "COMP310" };
 

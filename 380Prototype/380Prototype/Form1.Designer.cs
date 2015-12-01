@@ -64,11 +64,11 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Location = new System.Drawing.Point(1, 12);
+            this.tabControl1.Location = new System.Drawing.Point(1, 2);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1755, 1276);
+            this.tabControl1.Size = new System.Drawing.Size(1410, 1038);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 0;
             // 
@@ -150,7 +150,7 @@
             this.tabPage6.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage6.Size = new System.Drawing.Size(1747, 1243);
+            this.tabPage6.Size = new System.Drawing.Size(1402, 1005);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "recommend";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -159,15 +159,15 @@
             // 
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 20;
-            this.listBox2.Location = new System.Drawing.Point(56, 685);
+            this.listBox2.Location = new System.Drawing.Point(678, 297);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(456, 204);
+            this.listBox2.Size = new System.Drawing.Size(439, 204);
             this.listBox2.TabIndex = 16;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(51, 629);
+            this.label8.Location = new System.Drawing.Point(674, 208);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(146, 20);
             this.label8.TabIndex = 15;
@@ -175,7 +175,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(203, 629);
+            this.textBox1.Location = new System.Drawing.Point(880, 208);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(237, 26);
@@ -184,7 +184,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(695, 91);
+            this.label7.Location = new System.Drawing.Point(52, 621);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(205, 20);
@@ -193,8 +193,8 @@
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(2, 2);
-            this.monthCalendar1.Location = new System.Drawing.Point(647, 146);
+            this.monthCalendar1.CalendarDimensions = new System.Drawing.Size(2, 1);
+            this.monthCalendar1.Location = new System.Drawing.Point(54, 678);
             this.monthCalendar1.Margin = new System.Windows.Forms.Padding(8, 10, 8, 10);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 12;
