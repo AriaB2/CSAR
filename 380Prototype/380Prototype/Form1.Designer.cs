@@ -244,13 +244,6 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Computer Science",
-            "Math",
-            "Communications",
-            "History",
-            "Computer Engineering",
-            "Physics"});
             this.comboBox2.Location = new System.Drawing.Point(85, 92);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(193, 21);
@@ -269,14 +262,6 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Computer Science",
-            "Math",
-            "Communications",
-            "History",
-            "Chicano Studies",
-            "Physics",
-            "Computer Engineering"});
             this.comboBox1.Location = new System.Drawing.Point(85, 59);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(193, 21);

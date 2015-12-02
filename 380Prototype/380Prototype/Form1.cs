@@ -47,6 +47,11 @@ namespace _380Prototype
 
                 tempMajor.ID = int.Parse(xmlMajorElement.GetAttribute("id"));
                 tempMajor.Name = xmlMajorElement.GetAttribute("name");
+
+                //add the majors to major list and minor list (combobox1 and combobox2)
+                comboBox1.Items.Add(tempMajor.Name);
+                comboBox2.Items.Add(tempMajor.Name);
+
                 majorList.Add(tempMajor);
             }
 
@@ -119,6 +124,8 @@ namespace _380Prototype
                 studentList.Add(tempStudent);
             }
 
+            
+
         }
  
 
@@ -147,12 +154,10 @@ namespace _380Prototype
             // Select the date and display it on the schedule label
             textBox1.Text = monthCalendar1.SelectionStart.DayOfWeek.ToString() + " " + monthCalendar1.SelectionStart.Date.ToShortDateString();
 
-            string[] listOfClasses = { "COMP 110", "COMP 222", "COMP 322", "COMP 482", "COMP 333", "COMP 310" };
 
             Random r = new Random();
 
             var nums = new List<int> { };  // holds each instance of randomNumberOfClasses
-
 
             // How many classes to show per day
             int randomNumberOfClasses = r.Next(1, 4);
@@ -161,13 +166,13 @@ namespace _380Prototype
             // TODO: remove duplicates
             for (int i = 0; i <= randomNumberOfClasses; i++)
             {
-                int randomClassPicker = r.Next(listOfClasses.Length);  // Generate number from 0 to number of classes
+                int randomClassPicker = r.Next(courseList.Count);  // Generate number from 0 to number of classes
 
                 if (!nums.Contains(randomClassPicker))   // Get a unique class each, so no duplicates
                 {
                     nums.Add(randomClassPicker);
 
-                    listBox2.Items.Add(listOfClasses[randomClassPicker].ToString() + "\tFrom:\tTo:\tRoom:");
+                    listBox2.Items.Add(courseList[randomClassPicker].Name + "\tFrom:\tTo:\tRoom:");
                 }
             }
                 
@@ -176,11 +181,8 @@ namespace _380Prototype
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // retrieve more classes from the database of classes later
-            string[] listOfClasses = { "COMP 110", "COMP 222", "COMP 322", "COMP 482", "COMP333", "COMP310" };
-
-            for (int i = 0; i < listOfClasses.Length; i++) // add each class to the listbox
-                listBox1.Items.Add(listOfClasses[i]);
+            for (int i = 0; i < courseList.Count; i++) // add each class to the listbox
+                listBox1.Items.Add(courseList[i].Name);
 
             button2.Enabled = false;  // disable the button to disable adding the same list of classes more than once
 
@@ -190,5 +192,7 @@ namespace _380Prototype
         {
 
         }
+
+  
     }
 }
