@@ -11,14 +11,9 @@ using System.Xml;
 
 namespace _380Prototype
 {
-    public partial class Form1 : Form
+    public partial class prototypeForm : Form
     {
-        public Form1()
-        {
-            InitializeComponent();
-        }
-
-
+     
         //set the directory to local storage in order to get the path for the xml files
         string fileDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
@@ -30,12 +25,17 @@ namespace _380Prototype
 
         XmlDocument coursesXmlDocument;
         List<Course> courseList;
-  
+
+        public prototypeForm()
+        {
+            InitializeComponent();
+        }
+
         private void Form1_Shown(object sender, EventArgs e)
         {
+            // set default tab to the recommend tab
+            classTabs.SelectedTab = recommendTab;
             
-
-
             //initial loading of the xml docs
             majorXmlDocument = new XmlDocument();
             majorXmlDocument.Load(fileDirectory + "XmlDocs\\Majors.xml");
@@ -49,8 +49,8 @@ namespace _380Prototype
                 tempMajor.Name = xmlMajorElement.GetAttribute("name");
 
                 //add the majors to major list and minor list (combobox1 and combobox2)
-                comboBox1.Items.Add(tempMajor.Name);
-                comboBox2.Items.Add(tempMajor.Name);
+                majorComboBox.Items.Add(tempMajor.Name);
+                minorComboBox.Items.Add(tempMajor.Name);
 
                 majorList.Add(tempMajor);
             }
@@ -122,20 +122,18 @@ namespace _380Prototype
                 tempStudent.Major = selectedMajor;
 
                 studentList.Add(tempStudent);
-            }
-
-            
+            }        
 
         }
  
 
-
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked)
+            // display a generic message for having clicked no major
+            if (noMajorCheckBox.Checked)
             {
                 MessageBox.Show("THIS IS THE QUIZ AND SURVEY PAGE TO DETERMINE YOUR INTERESTS!");
-                checkBox1.Checked = false;
+                noMajorCheckBox.Checked = false;
             }
 
         }
@@ -149,10 +147,10 @@ namespace _380Prototype
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
             // Clear the listbox to display fresh information
-            listBox2.Items.Clear();
+            scheduleListBox.Items.Clear();
 
             // Select the date and display it on the schedule label
-            textBox1.Text = monthCalendar1.SelectionStart.DayOfWeek.ToString() + " " + monthCalendar1.SelectionStart.Date.ToShortDateString();
+            dateTextBox.Text = scheduleCalendar.SelectionStart.DayOfWeek.ToString() + " " + scheduleCalendar.SelectionStart.Date.ToShortDateString();
 
 
             Random r = new Random();
@@ -172,7 +170,7 @@ namespace _380Prototype
                 {
                     nums.Add(randomClassPicker);
 
-                    listBox2.Items.Add(courseList[randomClassPicker].Name + "\tFrom:\tTo:\tRoom:");
+                    scheduleListBox.Items.Add(courseList[randomClassPicker].Name + "\tFrom:\tTo:\tRoom:");
                 }
             }
                 
@@ -182,9 +180,9 @@ namespace _380Prototype
         private void button2_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < courseList.Count; i++) // add each class to the listbox
-                listBox1.Items.Add(courseList[i].Name);
+                recommendListBox.Items.Add(courseList[i].Name);
 
-            button2.Enabled = false;  // disable the button to disable adding the same list of classes more than once
+            checkRequirementsButton.Enabled = false;  // disable the button to disable adding the same list of classes more than once
 
         }
 
