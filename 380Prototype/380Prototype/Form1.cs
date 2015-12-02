@@ -18,6 +18,10 @@ namespace _380Prototype
             InitializeComponent();
         }
 
+
+        //set the directory to local storage in order to get the path for the xml files
+        string fileDirectory = AppDomain.CurrentDomain.BaseDirectory;
+
         XmlDocument majorXmlDocument;
         List<Major> majorList;
 
@@ -26,12 +30,15 @@ namespace _380Prototype
 
         XmlDocument coursesXmlDocument;
         List<Course> courseList;
-
+  
         private void Form1_Shown(object sender, EventArgs e)
         {
+            
+
+
             //initial loading of the xml docs
             majorXmlDocument = new XmlDocument();
-            majorXmlDocument.Load("Majors.xml");
+            majorXmlDocument.Load(fileDirectory + "XmlDocs\\Majors.xml");
 
             majorList = new List<Major>();
             foreach (XmlElement xmlMajorElement in majorXmlDocument.GetElementsByTagName("Major"))
@@ -44,8 +51,9 @@ namespace _380Prototype
             }
 
             coursesXmlDocument = new XmlDocument();
-            coursesXmlDocument.Load("Courses.xml");
+            coursesXmlDocument.Load(fileDirectory + "XmlDocs\\Courses.xml");
 
+            courseList = new List<Course>();
             foreach (XmlElement xmlCourseElement in coursesXmlDocument.GetElementsByTagName("Course"))
             {
                 Course tempCourse = new Course();
@@ -56,7 +64,7 @@ namespace _380Prototype
             }
 
             studentXmlDocument = new XmlDocument();
-            studentXmlDocument.Load("Students.xml");
+            studentXmlDocument.Load(fileDirectory + "XmlDocs\\Students.xml");
 
             studentList = new List<Student>();
             foreach (XmlElement xmlStudentElement in studentXmlDocument.GetElementsByTagName("Student"))

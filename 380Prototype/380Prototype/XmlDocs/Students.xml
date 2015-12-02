@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Students>
-  <Student id ="1" name="Selina Aghamalian"/>
-  <Student id ="2" name="Hossein Bidgoli"/>
-  <Student id ="3" name="Karan Bahamra"/>
-  <Student id ="4" name="Miguel Cruz"/>
-  <Student id ="5" name="Armenak Mazmanyan"/>
+  <Student id ="2" name="Hossein Bidgoli" major="1"/>
+  <Student id ="1" name="Selina Aghamalian" major ="2"/>
+  <Student id ="3" name="Karan Bahamra" major="3"/>
+  <Student id ="4" name="Miguel Cruz" major="4"/>
+  <Student id ="5" name="Armenak Mazmanyan" major="5"/>
 </Students>
