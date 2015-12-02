@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Majors>
+  <Major id ="1" name="Computer Science"/>
+  <Major id ="2" name="Math"/>
+  <Major id ="3" name="Communication"/>
+  <Major id ="4" name="History"/>
+  <Major id ="5" name="Computer Engineering"/>
+  <Major id ="6" name="Physics"/>  
+</Majors>

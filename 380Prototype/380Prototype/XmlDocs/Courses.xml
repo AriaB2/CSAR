@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Courses>
+  <Course id ="1" name ="COMP 110"/>
+  <Course id ="2" name ="COMP 222"/>
+  <Course id ="3" name ="COMP 322"/>
+  <Course id ="4" name ="COMP 482"/>
+  <Course id ="5" name ="COMP 333"/>
+  <Course id ="6" name ="COMP 310"/>
+</Courses>
